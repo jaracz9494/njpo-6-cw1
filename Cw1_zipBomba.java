@@ -25,7 +25,7 @@ public class Cw1_zipBomba {
         watek[] wat = new watek[ILE];
         
         for (int i=0; i<ILE; i++) {
-            wat[i] = new watek("Numer" + i);
+            wat[i] = new watek("" + i);
             wat[i].run();
         }
     }

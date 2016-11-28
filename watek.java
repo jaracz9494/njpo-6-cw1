@@ -25,19 +25,19 @@ public class watek implements Runnable {
             System.out.println("Watek: " + name + " rozpoczyna dzialanie");
             Random rand = new Random();
             
-            
             try {
                 
                 File file = new File("plik" + name + ".txt");
-                FileOutputStream fos = new FileOutputStream(file);
+                FileOutputStream wr = new FileOutputStream(file);
                 
                 
-                for (int i=0; i<1000; i++) {
-                    rand.nextInt(10);
-                    fos.write(i);
-                    fos.flush();
+                for (int i=0; i<1024; i++) {
+                    byte[] Bit = new byte[1024];
+                    rand.nextBytes(Bit);
+                    wr.write(Bit);
+                    wr.flush();
                 }
-                
+                wr.close();
             
             } catch (IOException ex) {
                 System.out.println ("Brak pliku");
